@@ -209,7 +209,7 @@ header
 .header-area .main-nav .logo {
   line-height: 80px;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 2vw;
   font-weight: 800;
   text-transform: uppercase;
   float: left;
@@ -222,7 +222,7 @@ header
 .header-area .main-nav .nav li a {
   display: block;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 1.2vw;
   color: #7a7a7a;
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease 0s;
@@ -233,6 +233,24 @@ header
   line-height: 40px;
   border: transparent;
   letter-spacing: 0.7px;
+}
+
+.main-banner .caption h6 {
+  margin-top: 0px;
+  font-size: 2vw;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.1vw;
+}
+.main-banner .caption h2 {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 84px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
 .background-header {
@@ -297,8 +315,8 @@ header
 }
 
 .header-area .main-nav .nav li {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .header-area .main-nav .nav li a {
@@ -317,7 +335,6 @@ header
   color: #ed563b!important;
   opacity: 1;
 }
-
 .header-area .main-nav .menu-trigger {
   cursor: pointer;
   display: block;
@@ -593,25 +610,6 @@ banner
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-}
-
-.main-banner .caption h6 {
-  margin-top: 0px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 0.5px;
-}
-
-.main-banner .caption h2 {
-  margin-top: 30px;
-  margin-bottom: 25px;
-  font-size: 84px;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 1px;
 }
 
 .main-banner .caption h2 em {
