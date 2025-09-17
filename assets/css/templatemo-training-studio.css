@@ -209,7 +209,7 @@ header
 .header-area .main-nav .logo {
   line-height: 80px;
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.3rem;
   font-weight: 800;
   text-transform: uppercase;
   float: left;
@@ -221,8 +221,8 @@ header
 
 .header-area .main-nav .nav li a {
   display: block;
-  font-weight: 500;
-  font-size: 0.7vw;
+  font-weight: 700;
+  font-size: 0.7rem;
   color: #7a7a7a;
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease 0s;
@@ -232,7 +232,7 @@ header
   height: 40px;
   line-height: 40px;
   border: transparent;
-  letter-spacing: 1px;
+  letter-spacing: 0.7px;
 }
 
 .background-header {
@@ -248,14 +248,6 @@ header
 .background-header .logo,
 .background-header .main-nav .nav li a {
   color: #232d39!important;
-}
-
-.background-header .main-nav .nav li:last-child a {
-  color: #fff !important;
-}
-
-.background-header .main-nav .nav li:last-child a:hover {
-  color: #fff!important;
 }
 
 .background-header .main-nav .nav li:hover a {
@@ -313,25 +305,6 @@ header
   color: #fff;
 }
 
-.header-area .main-nav .nav li:last-child a {
-  display: inline-block;
-  font-size: 13px;
-  padding: 11px 17px;
-  background-color: #ed563b;
-  color: #fff;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  transition: all .3s;
-  height: auto;
-  line-height: 20px;
-}
-
-.header-area .main-nav .nav li:last-child a:hover {
-  background-color: #f9735b;
-  opacity: 1;
-}
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
@@ -519,19 +492,6 @@ header
   .header-area .main-nav .nav li:first-child {
     border-top: 1px solid #eee;
   }
-  .header-area .main-nav .nav li:last-child {
-    width: 100%;
-    background-color: #ed563b;
-    color: #fff;
-  }
-  .header-area .main-nav .nav li:last-child a {
-    background-color: #ed563b!important;
-  }
-  .header-area .main-nav .nav li:last-child a:hover,
-  .header-area .main-nav .nav li:last-child:hover a {
-    background-color: #ed563b!important;
-    color: #fff!important;
-  }
   .header-area.header-sticky .nav {
     margin-top: 80px !important;
   }
@@ -549,9 +509,6 @@ header
     border: none !important;
     background: #f7f7f7 !important;
     color: #232d39 !important;
-  }
-  .header-area .main-nav .nav li:last-child a {
-    color: #fff!important;
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
