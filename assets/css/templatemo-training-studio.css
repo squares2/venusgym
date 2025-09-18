@@ -209,7 +209,7 @@ header
 .header-area .main-nav .logo {
   line-height: 80px;
   color: #fff;
-  font-size: 2vw;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 800;
   text-transform: uppercase;
   float: left;
@@ -231,7 +231,7 @@ header
   height: 40px;
   line-height: 40px;
   border: transparent;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .main-banner .caption h6 {
@@ -457,10 +457,10 @@ header
   color: #ed563b;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 4200px) {
   .header-area .main-nav .nav li {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   .header-area .main-nav:before {
     display: none;
