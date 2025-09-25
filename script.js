@@ -33,7 +33,7 @@ function distribute(cat)
 	{
 		const product = products[i];
 		
-		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="Çáßá")
+		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="Ø§Ù„ÙƒÙ„")
 		{
 			var article= document.createElement("article");
 			article.classList.add('product-card');
@@ -71,16 +71,16 @@ function distribute(cat)
 
 const categories=
 [
-{ name: 'ÈÑæÊííä'},
-{ name: 'ÓßÇßÑ'},
-{ name: 'ãÔÑæÈÇÊ'},
-{ name: 'ÈÑæÊííä ÈÇÑ'},
-{ name: 'Çáßá'}
+{ name: 'Ø¨Ø±ÙˆØªÙŠÙŠÙ†'},
+{ name: 'Ø³ÙƒØ§ÙƒØ±'},
+{ name: 'Ù…Ø´Ø±ÙˆØ¨Ø§Øª'},
+{ name: 'Ø¨Ø±ÙˆØªÙŠÙŠÙ† Ø¨Ø§Ø±'},
+{ name: 'Ø§Ù„ÙƒÙ„'}
 ];
 const products=
 [
-{ id: 1,name:'Protein 200 mg',category:'ÈÑæÊííä',price:80000,pngExist:0},
-{ id: 2,name:'ÈÑæÊííä 1 áíÊÑ',category:'ÈÑæÊííä',price:12,pngExist:1},
-{ id: 3,name:'Whey Protein 2 kg',category:'ÈÑæÊííä',price:15.5,pngExist:1},
-{ id: 4,name:'Protein Bar 30 mg',category:'ÓßÇßÑ',price:80000,pngExist:1}
+{ id: 1,name:'Protein 200 mg',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:80000,pngExist:0},
+{ id: 2,name:'Ø¨Ø±ÙˆØªÙŠÙŠÙ† 1 Ù„ÙŠØªØ±',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:12,pngExist:1},
+{ id: 3,name:'Whey Protein 2 kg',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:15.5,pngExist:1},
+{ id: 4,name:'Protein Bar 30 mg',category:'Ø³ÙƒØ§ÙƒØ±',price:80000,pngExist:1}
 ];
