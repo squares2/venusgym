@@ -1,0 +1,113 @@
+    :root{
+      /* change this to adjust card background color and transparency */
+      --card-bg: rgba(255,255,255,0.12); /* white with 12% opacity */
+      --card-border: rgba(255,255,255,0.18);
+      --text-color: #ffffff;
+      --muted: rgba(255,255,255,0.7);
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.25);
+      --max-width: 320px;
+    }
+
+    /* grid to demonstrate multiple cards (optional) */
+    .grid {
+      display:grid;
+      gap:8px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      width:100%;
+      max-width:980px;
+    }
+
+    .prod-image
+	{
+		width:60%;
+		height:80%;
+	}
+    .product-card{
+      max-width:var(--max-width);
+      width:20%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      /* outer overlay with transparent color */
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      margin-left: 10px;
+      margin-top: 20px;
+	  float: left;
+    }
+
+    /* the transparent colored bar behind content */
+    .product-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background: var(--card-bg); /* <--- transparent background here */
+      mix-blend-mode: normal;
+    }
+
+    .media{
+      display:block;
+      width:100%;
+      height:0;
+      padding-bottom:75%; /* aspect ratio 4:3; change as needed */
+      position:relative;
+      background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.08));
+    }
+
+    .media img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .content{
+      position:relative; /* above ::after overlay */
+      z-index:1;
+      color:var(--text-color);
+      text-align:center;
+      backdrop-filter: blur(4px); /* subtle blur if supported */
+    }
+
+    .product-name{
+      margin:0 0 0px;
+      font-size:clamp(0.8rem, 1.3vw, 2rem);
+      line-height:1;
+      font-weight:600;
+      color:var(--text-color);
+      word-break:break-word;
+    }
+
+    .product-price{
+      margin:0;
+      font-size:1.15rem;
+      font-weight:700;
+      letter-spacing:0.2px;
+      color:var(--text-color);
+    }
+
+    .product-price small{
+      display:block;
+      font-size:0.8rem;
+      font-weight:600;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    /* hover/active */
+    .product-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 14px 36px rgba(2,6,23,0.6);
+    }
+
+    /* responsive tweaks */
+    @media (max-width:420px){
+      :root{ --max-width: 100%; }
+      .product-name{ font-size:0.96rem; }
+      .product-price{ font-size:1rem; }
+    }
