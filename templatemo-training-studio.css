@@ -29,6 +29,7 @@ font & reset css
 --------------------------------------------- 
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url('https://fonts.cdnfonts.com/css/sakkal-majalla');
 /* 
 ---------------------------------------------
 reset
@@ -278,21 +279,6 @@ header
 }
 
 .category li a {
-  display: block;
-  font-weight: 600;
-  font-size: clamp(0.8rem, 1.2vw, 2rem);
-  color: #7a7a7a;
-  text-transform: uppercase;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  height: 40px;
-  line-height: 40px;
-  border: transparent;
-  letter-spacing: 0.3px;
-}
-.category li a {
   color: #232d39!important;
 }
 
@@ -304,18 +290,21 @@ header
   color: #ed563b!important;
 }
 .category {
+	font-family: Sakkal Majalla;
 	direction: rtl;
 	text-align: center;
+	width: fit-content;
 	display: inline-block;
-	background-color: #ccc;
-	border-radius: 15px;
-    list-style: none; /* Removes bullet points */
-    padding: 10px; /* Removes default padding */
-    margin:20px; /* Removes default margin */
+	border-radius: 10px;
+    padding: 0px; /* Removes default padding */
+    margin:15px; /* Removes default margin */
 }
 
 .category li {
     display: inline-block;
+	background-color: #ccc;
+	border-radius: 10px;
+	border: 2px outset orange;
     margin-right: 10px; /* Adds spacing between list items */
 }
 

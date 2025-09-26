@@ -1,3 +1,25 @@
+function numberComma(number)
+{
+	var result="";
+	var count=0;
+	if(number.length<=3)result=""+number;
+	else
+	{
+		result="";
+		var txt=""+number;
+		for(let i=txt.length-1;i>=0;i--)
+		{
+			if(count==3)
+			{
+				result=","+result;
+				count=0;
+			}
+			result=txt.charAt(i)+result;
+			count++;
+		}
+	}
+	return result;
+}
 function distributeCategories()
 {
 	var topnav=document.getElementById("category");
@@ -33,7 +55,7 @@ function distribute(cat)
 	{
 		const product = products[i];
 		
-		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="Ø§Ù„ÙƒÙ„")
+		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="Çáßá")
 		{
 			var article= document.createElement("article");
 			article.classList.add('product-card');
@@ -49,7 +71,7 @@ function distribute(cat)
 			
 			var p= document.createElement("p");
 			p.classList.add('product-price');
-			p.style="font-size: clamp(0.8rem, 1.5vw, 1.5rem);";
+			p.style="margin:0 0 0px;font-size: clamp(0.8rem, 1.5vw, 1.5rem);";
 			
 			var small= document.createElement("small");
 			
@@ -57,8 +79,8 @@ function distribute(cat)
 			else img.src="./assets/images/products/0.png";
 			
 			h3.innerHTML=product.name;
-			if(product.price<10000)p.innerHTML=product.price+" $ <small>Special price</small>";
-			else p.innerHTML=product.price+" L.L. <small>Special price</small>";
+			if(product.price<10000)p.innerHTML=numberComma(product.price)+" $ <small>Special price</small>";
+			else p.innerHTML=numberComma(product.price)+" L.L. <small>Special price</small>";
 
 			div.append(h3);
 			div.append(p);
@@ -71,14 +93,15 @@ function distribute(cat)
 
 const categories=
 [
-{ name: 'Ø¨Ø±ÙˆØªÙŠÙŠÙ†'},
-{ name: 'Ø³ÙƒØ§ÙƒØ±'},
-{ name: 'Ù…Ø´Ø±ÙˆØ¨Ø§Øª'}
+{ name: 'ÈÑæÊííä'},
+{ name: 'ÓßÇßÑ'},
+{ name: 'ãÔÑæÈÇÊ'},
+{ name: 'Çáßá'}
 ];
 const products=
 [
-{ id: 1,name:'whey',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:5.0,pngExist:1},
-{ id: 2,name:'Mass Gainer',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:420000.0,pngExist:1},
-{ id: 3,name:'protein choc',category:'Ø³ÙƒØ§ÙƒØ±',price:3.0,pngExist:1},
-{ id: 4,name:'Ù…ÙŠØ§Ù‡',category:'Ù…Ø´Ø±ÙˆØ¨Ø§Øª',price:20000.0,pngExist:1}
+{ id: 1,name:'whey',category:'ÈÑæÊííä',price:5.0,pngExist:1},
+{ id: 2,name:'Mass Gainer',category:'ÈÑæÊííä',price:420000.0,pngExist:1},
+{ id: 3,name:'protein choc',category:'ÓßÇßÑ',price:3.0,pngExist:1},
+{ id: 4,name:'ãíÇå',category:'ãÔÑæÈÇÊ',price:20000.0,pngExist:1}
 ];
