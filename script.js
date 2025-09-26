@@ -73,14 +73,12 @@ const categories=
 [
 { name: 'بروتيين'},
 { name: 'سكاكر'},
-{ name: 'مشروبات'},
-{ name: 'بروتيين بار'},
-{ name: 'الكل'}
+{ name: 'مشروبات'}
 ];
 const products=
 [
-{ id: 1,name:'Protein 200 mg',category:'بروتيين',price:80000,pngExist:0},
-{ id: 2,name:'بروتيين 1 ليتر',category:'بروتيين',price:12,pngExist:1},
-{ id: 3,name:'Whey Protein 2 kg',category:'بروتيين',price:15.5,pngExist:1},
-{ id: 4,name:'Protein Bar 30 mg',category:'سكاكر',price:80000,pngExist:1}
+{ id: 1,name:'whey',category:'بروتيين',price:5.0,pngExist:1},
+{ id: 2,name:'Mass Gainer',category:'بروتيين',price:420000.0,pngExist:1},
+{ id: 3,name:'protein choc',category:'سكاكر',price:3.0,pngExist:1},
+{ id: 4,name:'مياه',category:'مشروبات',price:20000.0,pngExist:1}
 ];
