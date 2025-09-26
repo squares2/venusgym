@@ -100,8 +100,9 @@ const categories=
 ];
 const products=
 [
-{ id: 1,name:'whey',category:'بروتيين',price:5.0,pngExist:1},
+{ id: 1,name:'whey',category:'بروتيين',price:1005.25,pngExist:1},
 { id: 2,name:'Mass Gainer',category:'بروتيين',price:420000.0,pngExist:1},
 { id: 3,name:'protein choc',category:'سكاكر',price:3.0,pngExist:1},
 { id: 4,name:'مياه',category:'مشروبات',price:20000.0,pngExist:1}
 ];
+
