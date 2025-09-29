@@ -52,6 +52,7 @@ function retrieveValue()
 				login[0].username=user.username;
 				login[0].password=user.password;
 				login[0].userowner=user.userowner;
+				alert(login[0].userowner);
 			}
 		}
 		var userowner=document.getElementById("userowner");
@@ -177,5 +178,6 @@ const users=
 { username: 'z4',password:'b3711',userowner:'z44'},
 { username: 't5',password:'a4567',userowner:'t5'}
 ];
+
 
 
