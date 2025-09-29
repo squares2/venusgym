@@ -153,7 +153,7 @@ function distribute(cat)
 }
 const login=
 [
-{ username: '',password:'',userowner:''},
+{ username: 'r1',password:'',userowner:'r11'},
 ];
 const categories=
 [
@@ -177,3 +177,4 @@ const users=
 { username: 'z4',password:'b3711',userowner:'z44'},
 { username: 't5',password:'a4567',userowner:'t5'}
 ];
+
