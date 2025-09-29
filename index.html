@@ -30,7 +30,7 @@ https://templatemo.com/tm-548-training-studio
 	
    </head>
     
-    <body onload="distributeCategories();/*distribute('first')*/">
+    <body onload="distributeCategories();printLogin();/*distribute('first')*/">
     
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
@@ -66,6 +66,23 @@ https://templatemo.com/tm-548-training-studio
                             <li class="scroll-to-section"><a href="#schedule">Schedule</a></li>
                             <li class="scroll-to-section"><a href="#products">Products</a></li> 
                             <li class="scroll-to-section"><a href="#contact-us">Contact</a></li> 
+                            <li class="scroll-to-section"><a id="login_name"onclick="openForm()"href="#login">Login</a></li> 
+							<div class="form-popup" id="myForm">
+								<form  class="form-container">
+								<h1>Login</h1>
+
+								<label for="email"><b>Username</b></label>
+								<input type="text" placeholder="Enter Username" id="username" required>
+
+								<label for="psw"><b>Password</b></label>
+								<input type="password" placeholder="Enter Password" id="password" required>
+
+								<button type="button"onclick="javascript:if(checkLogin())storeValue();"class="btn">Login	</button>
+								
+								<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+								</form>
+							</div>
+
                        </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -316,9 +333,9 @@ https://templatemo.com/tm-548-training-studio
 						<div></div>
 						<div>
 						<ul style="font-weight:600;font-size: clamp(1.5rem, 2.5vw, 2rem);"id="category"class="category">
-							<li><a href="#product" class="active">ÈÑæÊííä</a></li>
-							<li><a href="#product">ÈÑæÊííä ÈÇÑ</a></li>
-							<li><a href="#product">ãæÇÏ ÃÎÑì</a></li>
+							<li><a href="#product" class="active">Ø¨Ø±ÙˆØªÙŠÙŠÙ†</a></li>
+							<li><a href="#product">Ø¨Ø±ÙˆØªÙŠÙŠÙ† Ø¨Ø§Ø±</a></li>
+							<li><a href="#product">Ù…ÙˆØ§Ø¯ Ø£Ø®Ø±Ù‰</a></li>
 						</ul>
 						</div>
 						<div id="product"class="products">
