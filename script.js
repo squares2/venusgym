@@ -116,7 +116,7 @@ function distribute(cat)
 	{
 		const product = products[i];
 		
-		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="Çáßá")
+		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="Ø§Ù„ÙƒÙ„")
 		{
 			var article= document.createElement("article");
 			article.classList.add('product-card');
@@ -157,21 +157,21 @@ const login=
 ];
 const categories=
 [
-{ name: 'ÈÑæÊííä'},
-{ name: 'ÓßÇßÑ'},
-{ name: 'ãÔÑæÈÇÊ'},
-{ name: 'Çáßá'}
+{ name: 'Ø¨Ø±ÙˆØªÙŠÙŠÙ†'},
+{ name: 'Ø³ÙƒØ§ÙƒØ±'},
+{ name: 'Ù…Ø´Ø±ÙˆØ¨Ø§Øª'},
+{ name: 'Ø§Ù„ÙƒÙ„'}
 ];
 const products=
 [
-{ id: 1,name:'whey',category:'ÈÑæÊííä',price:5.0,pngExist:1},
-{ id: 2,name:'Mass Gainer',category:'ÈÑæÊííä',price:420000.0,pngExist:1},
-{ id: 3,name:'protein choc',category:'ÓßÇßÑ',price:3.0,pngExist:1},
-{ id: 4,name:'ãíÇå',category:'ãÔÑæÈÇÊ',price:20000.0,pngExist:1}
+{ id: 1,name:'whey',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:5.0,pngExist:1},
+{ id: 2,name:'Mass Gainer',category:'Ø¨Ø±ÙˆØªÙŠÙŠÙ†',price:420000.0,pngExist:1},
+{ id: 3,name:'protein choc',category:'Ø³ÙƒØ§ÙƒØ±',price:3.0,pngExist:1},
+{ id: 4,name:'Ù…ÙŠØ§Ù‡',category:'Ù…Ø´Ø±ÙˆØ¨Ø§Øª',price:20000.0,pngExist:1}
 ];
 const users=
 [
-{ username: 'Êí4',password:'a2345',userowner:'t4'},
+{ username: 'ØªÙŠ4',password:'a2345',userowner:'t4'},
 { username: 'user3',password:'v1234',userowner:'t3'},
 { username: 'z1',password:'z1',userowner:'zboon'},
 { username: 'z4',password:'b3711',userowner:'z44'},
