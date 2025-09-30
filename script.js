@@ -52,10 +52,34 @@ function retrieveValue()
 				login[0].username=user.username;
 				login[0].password=user.password;
 				login[0].userowner=user.userowner;
+				login[0].dob=user.dob;
+				login[0].subscriptiontype=user.subscriptiontype;
+				login[0].payment=user.payment;
+				login[0].sport=user.sport;
+				login[0].paydate=user.paydate;
+				login[0].expirydate=user.expdate;
 			}
 		}
 		var userowner=document.getElementById("userowner");
+		var dob=document.getElementById("dob");
+		var subscriptiontype=document.getElementById("subscriptiontype");
+		var payment=document.getElementById("payment")+" $";
+		var sport=document.getElementById("sport");
+		var paydate=document.getElementById("paydate");
+		var expirydate=document.getElementById("expirydate");
+		var monthly;
+		
+		if(login[0].subscriptiontype==1)monthly="يومي";
+		else if(login[0].subscriptiontype==2)monthly="شهري";
+		else monthly="3 أشهر";
+		
 		userowner.innerHTML=login[0].userowner;
+		dob.innerHTML=login[0].dob;
+		subscriptiontype.innerHTML=monthly;
+		payment.innerHTML=login[0].payment;
+		sport.innerHTML=login[0].sport;
+		paydate.innerHTML=login[0].paydate;
+		expirydate.innerHTML=login[0].expirydate;
 	}
 	else window.location.href = 'error.html';
 }
@@ -153,8 +177,9 @@ function distribute(cat)
 }
 const login=
 [
-{ username: 'r1',password:'',userowner:'r11'},
+{ username: '',password:'',userowner:'',dob: '',subscriptiontype: '',payment: '',sport: '',paydate: '',expirydate: ''}
 ];
+
 const categories=
 [
 { name: 'بروتيين'},
@@ -171,13 +196,10 @@ const products=
 ];
 const users=
 [
-{ username: 't4',password:'t4',userowner:'فلان الفولاني'},
-{ username: 'user3',password:'v1234',userowner:'t3'},
-{ username: 'z1',password:'z1',userowner:'zboon'},
-{ username: 'z4',password:'b3711',userowner:'z44'},
-{ username: 't5',password:'a4567',userowner:'t5'}
+{ username: 'user3',password:'u',userowner:'t3',dob: '1999-01-01',subscriptiontype: '2',payment: '20',sport: 'sport3',paydate: '2025-10-01',expdate: '2026-10-01'},
+{ username: 'تي4',password:'a2345',userowner:'t4',dob: 'null',subscriptiontype: '1',payment: '10',sport: 'sport1',paydate: '2025-09-01',expdate: '2026-09-01'},
+{ username: 'z1',password:'z1',userowner:'zboon',dob: 'null',subscriptiontype: '2',payment: '20',sport: 'sport1',paydate: '2025-10-01',expdate: '2026-10-01'},
+{ username: 'z4',password:'b3711',userowner:'z44',dob: '2000-01-01',subscriptiontype: '1',payment: '22',sport: 'sport2',paydate: '2025-10-01',expdate: '2026-01-01'},
+{ username: 't5',password:'r4444',userowner:'t5',dob: '1984-08-20',subscriptiontype: '2',payment: '20',sport: 'sport1',paydate: '2026-01-01',expdate: '2027-01-01'},
+{ username: 'user5',password:'v9736',userowner:'dgdffj',dob: '1980-05-12',subscriptiontype: '2',payment: '15',sport: 'sport1',paydate: '2001-01-01',expdate: '2002-01-01'}
 ];
-
-
-
-
