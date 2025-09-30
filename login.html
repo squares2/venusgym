@@ -2,7 +2,6 @@
 <html lang="ar">
 
   <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,6 +17,7 @@ https://templatemo.com/tm-548-training-studio
 -->
     <!-- Additional CSS Files -->
 	<script src="script.js"></script>
+	<script src="table.js"></script>
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
@@ -26,6 +26,8 @@ https://templatemo.com/tm-548-training-studio
     <link rel="stylesheet" href="templatemo-training-studio.css">
 
     <link rel="stylesheet" type="text/css" href="card-style.css">
+
+    <link rel="stylesheet" type="text/css" href="table.css">
 	
 	
    </head>
@@ -80,12 +82,31 @@ https://templatemo.com/tm-548-training-studio
         <video autoplay muted loop id="bg-video">
             <source src="assets/images/gym-video.mp4" type="video/mp4" />
         </video>
-
         <div class="video-overlay header-text">
             <div class="caption">
-                <h6>
-				Welcome Mr.<p id="userowner">
-				</h6>
+				<h3 style="font-weight:800;font-size: clamp(1rem, 1.8vw, 2.5rem);color:#ED563B">مشتركنا&nbsp;</h3>
+				<h2 style="font-size: clamp(1.5rem, 3.6vw, 5rem);color:#49A334"id="userowner"/>
+                <h3 style="font-weight:800;font-size: clamp(1rem, 1.8vw, 2.5rem);color:#ED563B">
+				أهلا وسهلا بك في أكاديمية فينوس الرياضية
+				</h3>
+				<table>
+			    <tr class="row-1">
+			      <td class="col-1">تاريخ نهاية الصلاحية</td>
+			      <td class="col-1">تاريخ الدفع القادم</td>
+			      <td class="col-1">الرياضة</td>
+			      <td class="col-1">قيمة الإشتراك</td>
+			      <td class="col-1">نوع الإشتراك</td>
+			      <td class="col-1">تاريخ الميلاد</td>
+			    </tr>
+			    <tr>
+			      <td id="expirydate"class="col-1">01-01-2027</td>
+			      <td id="paydate"class="col-2">01-10-2025</td>
+			      <td id="sport"class="col-3">جودو</td>
+			      <td id="payment"class="col-4">25 $</td>
+			      <td id="subscriptiontype"class="col-5">شهري</td>
+			      <td id="dob"class="col-6">20-08-1984</td>
+			    </tr>
+				</table>
             </div>
         </div>
     </div>
