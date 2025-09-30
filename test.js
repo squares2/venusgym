@@ -13,4 +13,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
   from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
   const db=getDatabase();
   
-  alert("gd2");
+	set(ref(db,"users/03"),
+	{
+		username:"user1",password:"pass1",age:"25"
+	}).then(()=>{alert("Data added")}).catch((error)=>{alert(error)});
+	
+	set(ref(db,"users/04"),
+	{
+		username:"user2",password:"pass2",age:"29"
+	}).then(()=>{alert("Data added")}).catch((error)=>{alert(error)});
+  
+  alert("gd3");
