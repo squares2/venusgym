@@ -16,11 +16,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 	set(ref(db,"users/03"),
 	{
 		username:"user1",password:"pass1",age:"25"
-	}).then(()=>{alert("Data added")}).catch((error)=>{alert(error)});
+	});
 	
 	set(ref(db,"users/04"),
 	{
 		username:"user2",password:"pass2",age:"29"
-	}).then(()=>{alert("Data added")}).catch((error)=>{alert(error)});
+	});
+	const dbref=ref(db);
+	
+	val snapshot=get(child(dbref,"users/04"));
+	alert(snapshot.password);
   
-  alert("gd3");
+  alert("gd4");
