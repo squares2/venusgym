@@ -13,19 +13,20 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
   from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
   const db=getDatabase();
   
-	set(ref(db,"users/03"),
+	set(ref(db,"users/07"),
 	{
-		username:"user1",password:"pass1",age:"25"
+		username:"user7",password:"pass7",age:"25"
 	});
 	
-	set(ref(db,"users/04"),
+	set(ref(db,"users/08"),
 	{
-		username:"user2",password:"pass2",age:"29"
+		username:"user8",password:"pass8",age:"29"
 	});
-	const dbref=ref(db);
+	/*const dbref=ref(db);
 	
 	val snapshot=get(child(dbref,"users/04"));
-	alert(snapshot.val().password);
+	alert(snapshot.val().password);*/
   
   alert("gd4");
+
 
