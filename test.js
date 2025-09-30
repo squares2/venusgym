@@ -25,6 +25,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 	const dbref=ref(db);
 	
 	val snapshot=get(child(dbref,"users/04"));
-	alert(snapshot.password);
+	alert(snapshot.val().password);
   
   alert("gd4");
+
