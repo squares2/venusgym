@@ -1,4 +1,4 @@
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
   const firebaseConfig = {
     apiKey: "AIzaSyAVz09X6t6h4AnIUyl8CSpHNWgsLwjAqRk",
     authDomain: "venusgym-5c509.firebaseapp.com",
@@ -9,4 +9,8 @@
     appId: "1:694873396897:web:ea68b2d124070a09ac42e0"
   };
   const app = initializeApp(firebaseConfig);
-  alert("gd");
+  import {getDatabase, set, get,update,remove,ref,child}
+  from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
+  const db=getDatabase();
+  
+  alert("gd2");
