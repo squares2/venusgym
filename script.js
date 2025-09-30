@@ -177,7 +177,7 @@ function distribute(cat)
 }
 const login=
 [
-{ username: '',password:'',userowner:'',dob: '',subscriptiontype: '',payment: '',sport: '',paydate: '',expirydate: ''}
+{ username: '',password:'',userowner:'تجربة',dob: '',subscriptiontype: '',payment: '',sport: '',paydate: '',expirydate: ''}
 ];
 
 const categories=
@@ -203,4 +203,5 @@ const users=
 { username: 't5',password:'r4444',userowner:'t5',dob: '1984-08-20',subscriptiontype: '2',payment: '20',sport: 'sport1',paydate: '2026-01-01',expdate: '2027-01-01'},
 { username: 'user5',password:'v9736',userowner:'dgdffj',dob: '1980-05-12',subscriptiontype: '2',payment: '15',sport: 'sport1',paydate: '2001-01-01',expdate: '2002-01-01'}
 ];
+
 
