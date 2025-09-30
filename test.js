@@ -22,9 +22,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 	{
 		username:"user6",password:"pass6",age:"31"
 	});
-	
+	const dbref=ref(db);
 	get(child(dbref,"users/04")).then((snapshot)=>{
 		if(snapshot.exists()){ alert(snapshot.val().password);}}).catch((error)=>{
 			alert(error);})
   
   alert("gd5");
+
