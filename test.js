@@ -13,7 +13,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
   from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
   const db=getDatabase();
   
-	set(ref(db,"users/05"),
+	/*set(ref(db,"users/05"),
 	{
 		username:"user5",password:"pass5",age:"22"
 	});
@@ -27,5 +27,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 		if(snapshot.exists()){ alert(snapshot.val().password);}}).catch((error)=>{
 			alert(error);})
   
-  alert("gd5");
+  alert("gd5");*/
+
 
