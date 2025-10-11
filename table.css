@@ -27,47 +27,12 @@ tr + tr td {
   border-top: 1px solid var(--border-color);
 }
 
-/*td:hover,
-tr:hover td:first-child,
-.row-1 .on-hover {
-  color: var(--accent-color);
-  background-color: var(--bg-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 5px;
-}*/
-
 td:hover {
   transform: scale(1.1);
   transition: all .05s;
 }
 
-/*tr:hover td:first-child,
-.row-1 .on-hover {
-  transform: scale(1.2);
-  transition: all .1s;
-}*/
-
 .row-1 td {
   font-weight: bold;
   color: var(--accent-color);
 }
-
-/*@media (min-width: 860px) and (max-width: 1279px) {
-  table {
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 1280px) and (max-width: 1919px) {
-  table {
-    width: 50vw;
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1920px) {
-  table {
-    width: 30vw;
-    font-size: 20px;
-  }
-}*/

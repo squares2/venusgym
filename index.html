@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="ar">
 
   <head>
-
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,10 +26,9 @@ https://templatemo.com/tm-548-training-studio
 
     <link rel="stylesheet" type="text/css" href="card-style.css">
 	
-	
    </head>
     
-    <body onload="distributeCategories();printLogin();/*distribute('first')*/">
+    <body>
     
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
@@ -57,30 +55,29 @@ https://templatemo.com/tm-548-training-studio
 						
  <image src="venus.png"style="position:fixed;top:15px;left:20px;width:40px;height:40px">    
                        <a style="position:fixed;top:0px;left:80px;"href="index.html" class="logo"><span style="color:#49a334;"> VENUS</span>
-<em> Sports Academy</em></a>
+<em> Sports Academy2</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-						<div style="display: none;">تجربة</div>
+						<div style="display: none;">بل</div>
                         <ul style="gap: 0px;"class="nav">
                             <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
                             <li class="scroll-to-section"><a href="#schedule">Schedule</a></li>
                             <li class="scroll-to-section"><a href="#products">Products</a></li> 
                             <li class="scroll-to-section"><a href="#contact-us">Contact</a></li> 
-                            <li style="display: none;"class="scroll-to-section"><a id="login_name"onclick="openForm()"href="#login">Login</a></li> 
+                            <li class="scroll-to-section"><a id="login_name"href="#login">Login</a></li> 
 							<div class="form-popup" id="myForm">
 								<form  class="form-container">
 								<h1>Login</h1>
 
 								<label for="email"><b>Username</b></label>
-								<input type="text" placeholder="Enter Username" id="username" required>
+								<input type="text" placeholder="Enter Username" id="username">
 
 								<label for="psw"><b>Password</b></label>
-								<input type="password" placeholder="Enter Password" id="password" required>
+								<input type="password" placeholder="Enter Password" id="password">
 
-								<button type="button"onclick="javascript:checkLogin();"class="btn">Login<button>
-								
-								<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+								<button type="button"id="login_form"class="btn">Login</button>
+								<button type="button" id="close_form"class="btn cancel">Close</button>
 								</form>
 							</div>
 
@@ -334,9 +331,9 @@ https://templatemo.com/tm-548-training-studio
 						<div></div>
 						<div>
 						<ul style="font-weight:600;font-size: clamp(1.5rem, 2.5vw, 2rem);"id="category"class="category">
-							<li><a href="#product" class="active">بروتيين</a></li>
-							<li><a href="#product">بروتيين بار</a></li>
-							<li><a href="#product">مواد أخرى</a></li>
+							<li><a href="#product" class="active">�������</a></li>
+							<li><a href="#product">������� ���</a></li>
+							<li><a href="#product">���� ����</a></li>
 						</ul>
 						</div>
 						<div id="product"class="products">
@@ -507,7 +504,7 @@ https://templatemo.com/tm-548-training-studio
         </div>
     </footer>
 
-    <!-- jQuery -->
+    <!-- juery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
@@ -517,13 +514,12 @@ https://templatemo.com/tm-548-training-studio
     <!-- Plugins -->
     <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/waypoints.min.js"></script>
-	<script src="script.js"></script>
-	<script type="module"src="test.js"></script>								
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/imgfix.min.js"></script> 
     <script src="assets/js/mixitup.js"></script> 
     <script src="assets/js/accordions.js"></script>
-    
+ 	<script type="module"src="script.js"></script>
+   
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
 

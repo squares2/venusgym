@@ -1,12 +1,58 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
+	const firebaseConfig = 
+	{
+		apiKey: "AIzaSyAVz09X6t6h4AnIUyl8CSpHNWgsLwjAqRk",
+		authDomain: "venusgym-5c509.firebaseapp.com",
+		databaseURL: "https://venusgym-5c509-default-rtdb.asia-southeast1.firebasedatabase.app",
+		projectId: "venusgym-5c509",
+		storageBucket: "venusgym-5c509.firebasestorage.app",
+		messagingSenderId: "694873396897",
+		appId: "1:694873396897:web:ea68b2d124070a09ac42e0"
+	};
+	const app = initializeApp(firebaseConfig);
+	import {getDatabase, set, get,update,remove,ref,child,onValue}
+	from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
+
+	const db=getDatabase();
+	const dbref=ref(db);
+		
+	function loginUser(user,pass)
+	{
+		get(child(dbref,"users")).then((snapshot) => 
+		{
+			if (snapshot.exists()) 
+			{
+				const data = snapshot.val();
+				const keys = Object.keys(data);
+				let i = 0;
+				while (i < keys.length) 
+				{
+					const key = keys[i];
+					const item = data[key];
+					if(item.username==user&&item.password==pass)
+					{
+						storeValue();
+					}	
+					i++;
+				}
+			} else {
+				console.log("No data available");
+			}
+		}).catch((error) => 
+		{
+			console.error(error);
+		});
+	}
 function printLogin() 
 {
 	const username = localStorage.getItem('username');
-	if(username!="")document.getElementById("login_name").innerHTML = username;
+	if(username!=null&&username!='')document.getElementById("login_name").innerHTML = username;
 }
 function openForm() 
 {
 	const username = localStorage.getItem('username');
-	if(username=="")document.getElementById("myForm").style.display = "block";
+	if(username==null||username=='')document.getElementById("myForm").style.display = "block";
 	else window.location.href = 'login.html';
 }
 function closeForm() 
@@ -17,23 +63,24 @@ function checkLogin()
 {
 	var username=document.getElementById("username").value;
 	var pass=document.getElementById("password").value;
-	for (let i = 0; i < users.length; i++)
+	loginUser(username,pass);
+	/*for (let i = 0; i < users.length; i++)
 	{
 		const user = users[i];
-		if(pass==user.password && username==user.username)storeValue();
-	}
+		if(pass==user.password && username.toLowerCase()==user.username.toLowerCase())storeValue();
+	}*/
 }
 function logout() 
 {
 	login[0].username="";
 	login[0].password="";
 	login[0].userowner="";
-	localStorage.setItem('username', "");
+	localStorage.setItem('username','');
 	window.location.href = 'index.html';
 }
 function storeValue() 
 {
-	var user=document.getElementById("username").value;
+	var user=document.getElementById("username").value.toLowerCase();
 	localStorage.setItem('username', user);
 	window.location.href = 'login.html';
 }
@@ -42,22 +89,39 @@ function retrieveValue()
 	const username = localStorage.getItem('username');
 	if(username!="")
 	{
-		for (let i = 0; i < users.length; i++)
+		get(child(dbref,"users")).then((snapshot) => 
 		{
-			const user = users[i];
-			if(username==user.username)
+			if (snapshot.exists()) 
 			{
-				login[0].username=user.username;
-				login[0].password=user.password;
-				login[0].userowner=user.userowner;
-				login[0].dob=user.dob;
-				login[0].subscriptiontype=user.subscriptiontype;
-				login[0].payment=user.payment;
-				login[0].sport=user.sport;
-				login[0].paydate=user.paydate;
-				login[0].expirydate=user.expdate;
+				const data = snapshot.val();
+				const keys = Object.keys(data);
+				let i = 0;
+				while (i < keys.length) 
+				{
+					const key = keys[i];
+					const item = data[key];
+					console.log(item.username+":"+user+":"+item.password+":"+pass);
+					if(item.username==username)
+					{
+						login[0].username=item.username;
+						login[0].password=item.password;
+						login[0].userowner=item.userowner;
+						login[0].dob=item.dob;
+						login[0].subscriptiontype=item.subscriptiontype;
+						login[0].payment=item.payment;
+						login[0].sport=item.sport;
+						login[0].paydate=item.paydate;
+						login[0].expirydate=item.expdate;
+					}	
+					i++;
+				}
+			} else {
+				console.log("No data available");
 			}
-		}
+		}).catch((error) => 
+		{
+			console.error(error);
+		});
 		var userowner=document.getElementById("userowner");
 		var dob=document.getElementById("dob");
 		var subscriptiontype=document.getElementById("subscriptiontype");
@@ -107,20 +171,36 @@ function distributeCategories()
 {
 	var topnav=document.getElementById("category");
 	topnav.innerHTML="";
-	for (let i = 0; i < categories.length; i++)
+	get(child(dbref,"categories")).then((snapshot) => 
 	{
-		const category = categories[i];
-		var a= document.createElement("a");
-		var li= document.createElement("li");
-		a.id=""+category.name;
-		a.onclick="distribute('"+category.name+"')";
-		a.href="javascript:distribute('"+category.name+"');";
-		a.style="margin:5px;"
-		if(i==0)a.classList.add('active');
-		a.innerHTML=category.name;
-		li.append(a);
-		topnav.append(li);
-	}
+		if (snapshot.exists()) 
+		{
+			const data = snapshot.val();
+			const keys = Object.keys(data);
+			let i = 0;
+			while (i < keys.length) 
+			{
+				const key = keys[i];
+				const item = data[key];
+				var a= document.createElement("a");
+				var li= document.createElement("li");
+				a.id=""+key;
+				a.onclick="distribute('"+item.category+"')";
+				a.href="javascript:distribute('"+item.category+"');";
+				a.style="margin:5px;"
+				if(i==0)a.classList.add('active');
+				a.innerHTML=item.category;
+				li.append(a);
+				topnav.append(li);
+				i++;
+			}
+		} else {
+			console.log("No data available");
+		}
+	}).catch((error) => 
+	{
+		console.error(error);
+	});
 }
 function distribute(cat)
 {
@@ -138,7 +218,7 @@ function distribute(cat)
 	{
 		const product = products[i];
 		
-		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="الكل")
+		if(cat==product.category||(cat=="first"&&product.category==categories[0].name)||cat=="����")
 		{
 			var article= document.createElement("article");
 			article.classList.add('product-card');
@@ -173,32 +253,45 @@ function distribute(cat)
 		}
 	}
 }
+document.addEventListener('DOMContentLoaded', distributeCategories);
+document.addEventListener('DOMContentLoaded', printLogin);
+//document.addEventListener('DOMContentLoaded', distribute('first'));
+//document.querySelectorAll("button")[1].remove();
+
+const login_name = document.getElementById('login_name');
+if (login_name) 
+{
+	login_name.addEventListener('click', () => 
+	{
+		openForm();
+	});
+}
+const login_form = document.getElementById('login_form');
+if (login_form) 
+{
+	login_form.addEventListener('click', () => 
+	{
+		checkLogin();
+	});
+}
+const close_form = document.getElementById('close_form');
+if (close_form) 
+{
+	close_form.addEventListener('click', () => 
+	{
+		closeForm();
+	});
+}
+const logout_form = document.getElementById('logout_form');
+if (logout_form) 
+{
+	logout_form.addEventListener('click', () => 
+	{
+		event.preventDefault();
+		logout();
+	});
+}
 const login=
 [
 { username: '',password:'',userowner:'',dob: '',subscriptiontype: '',payment: '',sport: '',paydate: '',expirydate: ''}
 ];
-
-const categories=
-[
-{ name: 'بروتيين'},
-{ name: 'سكاكر'},
-{ name: 'مشروبات'},
-{ name: 'الكل'}
-];
-const products=
-[
-{ id: 1,name:'whey',category:'بروتيين',price:5.0,pngExist:1},
-{ id: 2,name:'Mass Gainer',category:'بروتيين',price:420000.0,pngExist:1},
-{ id: 3,name:'protein choc',category:'سكاكر',price:3.0,pngExist:1},
-{ id: 4,name:'مياه',category:'مشروبات',price:20000.0,pngExist:1}
-];
-const users=
-[
-{ username: 'user3',password:'u',userowner:'حسين العوطه',dob: '1999-01-01',subscriptiontype: '2',payment: '20',sport: 'sport3',paydate: '2025-10-01',expdate: '2026-10-01'},
-{ username: 'تي4',password:'a2345',userowner:'t4',dob: 'null',subscriptiontype: '1',payment: '10',sport: 'sport1',paydate: '2025-09-01',expdate: '2026-09-01'},
-{ username: 'z1',password:'z1',userowner:'zboon',dob: 'null',subscriptiontype: '2',payment: '20',sport: 'sport1',paydate: '2025-10-01',expdate: '2026-10-01'},
-{ username: 'z4',password:'b3711',userowner:'z44',dob: '2000-01-01',subscriptiontype: '1',payment: '22',sport: 'sport2',paydate: '2025-10-01',expdate: '2026-01-01'},
-{ username: 't5',password:'r4444',userowner:'t5',dob: '1984-08-20',subscriptiontype: '2',payment: '20',sport: 'sport1',paydate: '2026-01-01',expdate: '2027-01-01'},
-{ username: 'user5',password:'v9736',userowner:'dgdffj',dob: '1980-05-12',subscriptiontype: '2',payment: '15',sport: 'sport1',paydate: '2001-01-01',expdate: '2002-01-01'}
-];
-
