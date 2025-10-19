@@ -32,7 +32,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 					const item = data[key];
 					if(item.username==user&&item.password==pass)
 					{
-						storeValue();
+						localStorage.setItem('username', item.username);
+						localStorage.setItem('password', item.password);
+						localStorage.setItem('userowner', item.userowner);
+						localStorage.setItem('dob', item.dob);
+						localStorage.setItem('subscriptiontype', item.subscriptiontype);
+						localStorage.setItem('payment', item.payment);
+						localStorage.setItem('sport', item.sport);
+						localStorage.setItem('paydate', item.paydate);
+						localStorage.setItem('expirydate', item.expdate);
+						window.location.href = 'login.html';
 					}	
 					i++;
 				}
@@ -44,6 +53,35 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 			console.error(error);
 		});
 	}
+function storeValue() 
+{
+	var user=document.getElementById("username").value.toLowerCase();
+	localStorage.setItem('username', user);
+		get(child(dbref,"users")).then((snapshot) => 
+		{
+	alert("");
+			if (snapshot.exists()) 
+			{
+				const data = snapshot.val();
+				const keys = Object.keys(data);
+				let i = 0;
+				while (i < keys.length) 
+				{
+					const key = keys[i];
+					const item = data[key];
+					if(item.username==username)
+					{
+					}	
+					i++;
+				}
+			} else {
+				console.log("No data available");
+			}
+		}).catch((error) => 
+		{
+			console.error(error);
+		});
+}
 function printLogin() 
 {
 	const username = localStorage.getItem('username');
@@ -53,7 +91,10 @@ function openForm()
 {
 	const username = localStorage.getItem('username');
 	if(username==null||username=='')document.getElementById("myForm").style.display = "block";
-	else window.location.href = 'login.html';
+	else 
+	{
+		window.location.href = 'login.html';
+	}	
 }
 function closeForm() 
 {
@@ -72,77 +113,8 @@ function checkLogin()
 }
 function logout() 
 {
-	login[0].username="";
-	login[0].password="";
-	login[0].userowner="";
 	localStorage.setItem('username','');
 	window.location.href = 'index.html';
-}
-function storeValue() 
-{
-	var user=document.getElementById("username").value.toLowerCase();
-	localStorage.setItem('username', user);
-	window.location.href = 'login.html';
-}
-export function retrieveValue() 
-{
-	const username = localStorage.getItem('username');
-	if(username!="")
-	{
-		get(child(dbref,"users")).then((snapshot) => 
-		{
-			if (snapshot.exists()) 
-			{
-				const data = snapshot.val();
-				const keys = Object.keys(data);
-				let i = 0;
-				while (i < keys.length) 
-				{
-					const key = keys[i];
-					const item = data[key];
-					if(item.username==username)
-					{
-						login[0].username=item.username;
-						login[0].password=item.password;
-						login[0].userowner=item.userowner;
-						login[0].dob=item.dob;
-						login[0].subscriptiontype=item.subscriptiontype;
-						login[0].payment=item.payment;
-						login[0].sport=item.sport;
-						login[0].paydate=item.paydate;
-						login[0].expirydate=item.expdate;
-					}	
-					i++;
-				}
-			} else {
-				console.log("No data available");
-			}
-		}).catch((error) => 
-		{
-			console.error(error);
-		});
-		var userowner=document.getElementById("userowner");
-		var dob=document.getElementById("dob");
-		var subscriptiontype=document.getElementById("subscriptiontype");
-		var payment=document.getElementById("payment")+" $";
-		var sport=document.getElementById("sport");
-		var paydate=document.getElementById("paydate");
-		var expirydate=document.getElementById("expirydate");
-		var monthly;
-		
-		if(login[0].subscriptiontype==1)monthly="يومي";
-		else if(login[0].subscriptiontype==2)monthly="شهري";
-		else monthly="3 أشهر";
-		
-		userowner.innerHTML=login[0].userowner;
-		dob.innerHTML=login[0].dob;
-		subscriptiontype.innerHTML=monthly;
-		payment.innerHTML=login[0].payment;
-		sport.innerHTML=login[0].sport;
-		paydate.innerHTML=login[0].paydate;
-		expirydate.innerHTML=login[0].expirydate;
-	}
-	else window.location.href = 'error.html';
 }
 function numberComma(number)
 {
@@ -360,10 +332,3 @@ if (logout_form)
 }
 document.addEventListener('DOMContentLoaded',loadCategories);
 document.addEventListener('DOMContentLoaded',loadProducts);
-
-const login=
-[
-{ username: '',password:'',userowner:'',dob: '',subscriptiontype: '',payment: '',sport: '',paydate: '',expirydate: ''}
-];
-//loadCategories();
-//loadProducts();
