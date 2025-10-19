@@ -12,9 +12,9 @@ function retrieveValue()
 		var expirydate=document.getElementById("expirydate");
 		var monthly;
 		
-		if(localStorage.getItem('subscriptiontype')==1)monthly="íæãí";
-		else if(localStorage.getItem('subscriptiontype')==2)monthly="ÔåÑí";
-		else monthly="3 ÃÔåÑ";
+		if(localStorage.getItem('subscriptiontype')==1)monthly="ÙŠÙˆÙ…ÙŠ";
+		else if(localStorage.getItem('subscriptiontype')==2)monthly="Ø´Ù‡Ø±ÙŠ";
+		else monthly="3 Ø£Ø´Ù‡Ø±";
 		userowner.innerHTML=localStorage.getItem('userowner');
 		dob.innerHTML=localStorage.getItem('dob');
 		subscriptiontype.innerHTML=monthly;
