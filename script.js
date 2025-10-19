@@ -186,7 +186,9 @@ function getFirstCategory()
 function loadCategories()
 {
 	var topnav=document.getElementById("category");
-	topnav.innerHTML="";
+	if(topnav!=null)
+	{
+		topnav.innerHTML="";
 		get(child(dbref,"categories")).then((snapshot) => 
 		{
 			if (snapshot.exists()) 
@@ -217,6 +219,7 @@ function loadCategories()
 		{
 			console.error(error);
 		});
+	}
 }
 function clickCategory(catName) 
 {
@@ -228,20 +231,22 @@ document.addEventListener('DOMContentLoaded', () =>
 {
   const categoryUL = document.getElementById('category');
   // Attach a single listener to the parent container
-  categoryUL.addEventListener('click', (event) => 
+  if(categoryUL!=null)
   {
-    // Check if the clicked element (event.target) or one of its parents is a `.block`
-    const clickedCategory = event.target.closest('a[category-name]');
-    
-    if (clickedCategory) 
-	{
-		event.preventDefault(); 
-      const catName = clickedCategory.getAttribute('category-name');
-	 // event.preventDefault()
-      clickCategory(catName);
-    }
-  });
-
+	  categoryUL.addEventListener('click', (event) => 
+	  {
+	    // Check if the clicked element (event.target) or one of its parents is a `.block`
+	    const clickedCategory = event.target.closest('a[category-name]');
+	    
+	    if (clickedCategory) 
+		{
+			event.preventDefault(); 
+	      const catName = clickedCategory.getAttribute('category-name');
+		 // event.preventDefault()
+	      clickCategory(catName);
+	    }
+	  });
+	}
   // Fetch and display the data on page load
   //loadCategories();
 });
@@ -249,71 +254,74 @@ document.addEventListener('DOMContentLoaded', () =>
 export function loadProducts(cat)
 {
 	var page=document.getElementById("product");
-	page.innerHTML="";
+	if(page!=null)
+	{
+		page.innerHTML="";
 
-	const cats=document.querySelectorAll("#category a[href]");
-	for(let j=0;j<cats.length;j++)
-	{
-		if(cat==cats[j].innerHTML||(cat instanceof Event&&j==0))cats[j].className="active";
-		else cats[j].className="";
-	}	
-	if(cat instanceof Event)getFirstCategory();
-	else
-	{
-		get(child(dbref,"products")).then((snapshot) => 
+		const cats=document.querySelectorAll("#category a[href]");
+		for(let j=0;j<cats.length;j++)
 		{
-			if (snapshot.exists()) 
+			if(cat==cats[j].innerHTML||(cat instanceof Event&&j==0))cats[j].className="active";
+			else cats[j].className="";
+		}	
+		if(cat instanceof Event)getFirstCategory();
+		else
+		{
+			get(child(dbref,"products")).then((snapshot) => 
 			{
-				const data = snapshot.val();
-				const keys = Object.keys(data);
-				let i = 0;
-				while (i < keys.length) 
+				if (snapshot.exists()) 
 				{
-					const key = keys[i];
-					const item = data[key];
-					
-					if(item.category==cat||cat=="الكل")
+					const data = snapshot.val();
+					const keys = Object.keys(data);
+					let i = 0;
+					while (i < keys.length) 
 					{
-						var article= document.createElement("article");
-						article.classList.add('product-card');
+						const key = keys[i];
+						const item = data[key];
 						
-						var img= document.createElement("img");
-						img.classList.add('prod-image');
-						
-						var div= document.createElement("div");
-						div.classList.add('content');
-						
-						var h3= document.createElement("h3");
-						h3.classList.add('product-name');
-						
-						var p= document.createElement("p");
-						p.classList.add('product-price');
-						p.style="margin:0 0 0px;font-size: clamp(0.8rem, 1.5vw, 1.5rem);";
-						
-						var small= document.createElement("small");
-				
-						if(item.pngExist)img.src="./assets/images/products/"+key+".png";
-						else img.src="./assets/images/products/0.png";
-						
-						h3.innerHTML=item.name;
-						if(item.price<10000)p.innerHTML=(""+item.price)+" $ <small>Special price</small>";
-						else p.innerHTML=numberComma(""+item.price)+" L.L. <small>Special price</small>";
+						if(item.category==cat||cat=="الكل")
+						{
+							var article= document.createElement("article");
+							article.classList.add('product-card');
+							
+							var img= document.createElement("img");
+							img.classList.add('prod-image');
+							
+							var div= document.createElement("div");
+							div.classList.add('content');
+							
+							var h3= document.createElement("h3");
+							h3.classList.add('product-name');
+							
+							var p= document.createElement("p");
+							p.classList.add('product-price');
+							p.style="margin:0 0 0px;font-size: clamp(0.8rem, 1.5vw, 1.5rem);";
+							
+							var small= document.createElement("small");
+					
+							if(item.pngExist)img.src="./assets/images/products/"+key+".png";
+							else img.src="./assets/images/products/0.png";
+							
+							h3.innerHTML=item.name;
+							if(item.price<10000)p.innerHTML=(""+item.price)+" $ <small>Special price</small>";
+							else p.innerHTML=numberComma(""+item.price)+" L.L. <small>Special price</small>";
 
-						div.append(h3);
-						div.append(p);
-						article.append(img);
-						article.append(div);
-						page.append(article);
+							div.append(h3);
+							div.append(p);
+							article.append(img);
+							article.append(div);
+							page.append(article);
+						}
+						i++;
 					}
-					i++;
+				} else {
+					console.log("No data available");
 				}
-			} else {
-				console.log("No data available");
-			}
-		}).catch((error) => 
-		{
-			console.error(error);
-		});
+			}).catch((error) => 
+			{
+				console.error(error);
+			});
+		}
 	}
 }
 
