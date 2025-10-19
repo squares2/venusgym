@@ -25,8 +25,7 @@ https://templatemo.com/tm-548-training-studio
     <link rel="stylesheet" href="templatemo-training-studio.css">
 
     <link rel="stylesheet" type="text/css" href="card-style.css">
-	
-   </head>
+	</head>
     
     <body>
     
@@ -65,7 +64,7 @@ https://templatemo.com/tm-548-training-studio
                             <li class="scroll-to-section"><a href="#schedule">Schedule</a></li>
                             <li class="scroll-to-section"><a href="#products">Products</a></li> 
                             <li class="scroll-to-section"><a href="#contact-us">Contact</a></li> 
-                            <li class="scroll-to-section"><a id="login_name"href="#login"></a></li> 
+                            <li class="scroll-to-section"><a id="login_name"href="#login">Login</a></li> 
 							<div class="form-popup" id="myForm">
 								<form  class="form-container">
 								<h1>Login</h1>
@@ -331,9 +330,9 @@ https://templatemo.com/tm-548-training-studio
 						<div></div>
 						<div>
 						<ul style="font-weight:600;font-size: clamp(1.5rem, 2.5vw, 2rem);"id="category"class="category">
-							<li><a href="#product" class="active">�������</a></li>
-							<li><a href="#product">������� ���</a></li>
-							<li><a href="#product">���� ����</a></li>
+							<li><a href="#product" class="active"></a></li>
+							<li><a href="#product"></a></li>
+							<li><a href="#product"></a></li>
 						</ul>
 						</div>
 						<div id="product"class="products">
@@ -519,7 +518,10 @@ https://templatemo.com/tm-548-training-studio
     <script src="assets/js/mixitup.js"></script> 
     <script src="assets/js/accordions.js"></script>
  	<script type="module"src="script.js"></script>
-   
+	<script>
+	const username = localStorage.getItem('username');
+	if(username!=null&&username!='')document.getElementById("login_name").innerHTML = username;
+	</script>
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
 

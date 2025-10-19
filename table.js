@@ -13,4 +13,4 @@ function handleMouseover(cell) {
 
 allCells.forEach(handleMouseover)
 
-table.addEventListener('mouseleave', () => mainCells.forEach(mainCell => mainCell.classList.remove('on-hover')))
+//table.addEventListener('mouseleave', () => mainCells.forEach(mainCell => mainCell.classList.remove('on-hover')))
