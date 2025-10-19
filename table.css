@@ -10,7 +10,7 @@ table {
   border-spacing: 0;
   table-layout: fixed;
   font-size: clamp(1rem, 2vw, 3rem);
-  font-family: 'Sakkal Majalla';
+  font-family: 'Times New Roman';
   margin-top:30px;
 }
 
@@ -36,3 +36,4 @@ td:hover {
   font-weight: bold;
   color: var(--accent-color);
 }
+
