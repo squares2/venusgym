@@ -87,7 +87,7 @@ function printLogin()
 	const username = localStorage.getItem('username');
 	if(username!=null&&username!='')document.getElementById("login_name").innerHTML = username;
 }
-function openForm() 
+function openForm2() 
 {
 	const username = localStorage.getItem('username');
 	if(username==null||username=='')document.getElementById("myForm").style.display = "block";
@@ -353,4 +353,5 @@ if (logout_form)
 }
 document.addEventListener('DOMContentLoaded',loadCategories);
 document.addEventListener('DOMContentLoaded',loadProducts);
+
 
