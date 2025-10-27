@@ -44,7 +44,7 @@
     }
 
      .product-name{
-      font-size:clamp(0.5rem, 1.2vw, 2rem);
+      font-size:clamp(0.5rem, 1.5vw, 2rem);
       line-height:1;
       font-weight:600;
 	  margin-bottom:5px;
@@ -116,4 +116,5 @@
       :root{ --max-width: 100%; }
       .product-name{ font-size:0.96rem; }
       .product-price{ font-size:1rem; }
+
     }
