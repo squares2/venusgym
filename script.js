@@ -222,7 +222,28 @@ document.addEventListener('DOMContentLoaded', () =>
   // Fetch and display the data on page load
   //loadCategories();
 });
-
+function getTextWidth(text, font) 
+{
+  // Use a cache for performance if you need to measure a lot of text
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  context.font = font;
+  const metrics = context.measureText(text);
+  return metrics.width;
+}
+/*function adjustFontSize(element) 
+{
+  let fontSize = parseFloat(window.getComputedStyle(element).fontSize);
+  const computedStyle = window.getComputedStyle(element);
+  const elementFont = '${computedStyle.fontSize} ${computedStyle.fontFamily}';
+  while (element.offsetWidth < getTextWidth(element.innerHTML,elementFont) && fontSize > 0) 
+  {
+    fontSize -= 1; 
+    element.style.fontSize = fontSize + 'px';
+  }
+  console.log(element.style.fontSize+":"+getTextWidth(element.innerHTML,elementFont));
+ // console.log(element.innerHTML.length+":"+element.innerHTML+":"+fontSize);
+}*/
 export function loadProducts(cat)
 {
 	var page=document.getElementById("product");
@@ -267,7 +288,6 @@ export function loadProducts(cat)
 							
 							var p= document.createElement("p");
 							p.classList.add('product-price');
-							p.style="margin:0 0 0px;font-size: clamp(0.8rem, 1.5vw, 1.5rem);";
 							
 							var small= document.createElement("small");
 					
@@ -283,6 +303,7 @@ export function loadProducts(cat)
 							article.append(img);
 							article.append(div);
 							page.append(article);
+							//adjustFontSize(h3);
 						}
 						i++;
 					}
@@ -332,3 +353,4 @@ if (logout_form)
 }
 document.addEventListener('DOMContentLoaded',loadCategories);
 document.addEventListener('DOMContentLoaded',loadProducts);
+
