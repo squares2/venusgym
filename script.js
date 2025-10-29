@@ -90,7 +90,7 @@ function printLogin()
 function openForm() 
 {
 	const username = localStorage.getItem('username');
-	if(username==null||username=='')document.getElementById("myForm").style.display = "block";
+	if(username==null||username=='')document.getElementById("myForm2").style.display = "block";
 	else 
 	{
 		window.location.href = 'login.html';
@@ -353,4 +353,5 @@ if (logout_form)
 }
 document.addEventListener('DOMContentLoaded',loadCategories);
 document.addEventListener('DOMContentLoaded',loadProducts);
+
 
