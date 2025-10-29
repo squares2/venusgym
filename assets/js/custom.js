@@ -53,6 +53,13 @@
 			$('.header-area .nav').slideToggle(200);
 		});
 	}
+	// Add a click handler for links inside the menu to close it
+    $('.header-area .nav a').not('.login').on('click', function() {
+        // Toggle the active class on the menu-trigger to reset its state
+        $('.menu-trigger').removeClass('active');
+        // Use slideUp to close the menu
+        $('.header-area .nav').slideUp(200);
+    });
 
 
 	$(document).ready(function () {
